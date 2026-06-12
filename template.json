@@ -1,0 +1,47 @@
+{
+  "$schema": "https://railway.app/template.schema.json",
+  "displayName": "Open WebUI",
+  "description": "Open WebUI — self-hosted AI interface supporting Ollama, OpenAI, and other LLM backends.",
+  "icon": "https://raw.githubusercontent.com/open-webui/open-webui/main/static/favicon.png",
+  "tags": ["AI", "LLM", "ChatGPT", "Ollama"],
+  "services": [
+    {
+      "name": "open-webui",
+      "source": {
+        "repo": "YOUR_GITHUB_USERNAME/openwebui-railway"
+      },
+      "build": {
+        "builder": "DOCKERFILE",
+        "dockerfilePath": "Dockerfile"
+      },
+      "deploy": {
+        "healthcheckPath": "/",
+        "restartPolicyType": "ON_FAILURE"
+      },
+      "variables": {
+        "PORT": {
+          "default": "8080",
+          "description": "Port the app listens on. Must be 8080."
+        },
+        "OPENAI_API_KEY": {
+          "description": "Optional: OpenAI API key to connect to OpenAI models.",
+          "isOptional": true
+        },
+        "OLLAMA_BASE_URL": {
+          "description": "Optional: URL of your Ollama instance.",
+          "isOptional": true
+        },
+        "WEBUI_SECRET_KEY": {
+          "description": "Secret key for session signing. Generate a random string.",
+          "randomDefault": true
+        }
+      },
+      "volumes": [
+        {
+          "mount": "/app/backend/data",
+          "name": "open-webui-data"
+        }
+      ]
+    }
+  ]
+}
