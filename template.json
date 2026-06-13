@@ -8,7 +8,7 @@
     {
       "name": "open-webui",
       "source": {
-        "repo": "YOUR_GITHUB_USERNAME/openwebui-railway"
+        "repo": "Amritasha/openwebui-railway"
       },
       "build": {
         "builder": "DOCKERFILE",
