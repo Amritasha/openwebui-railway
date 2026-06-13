@@ -34,6 +34,20 @@
         "WEBUI_SECRET_KEY": {
           "description": "Secret key for session signing. Generate a random string.",
           "randomDefault": true
+        },
+        "WEBUI_AUTH": {
+          "default": "true",
+          "description": "Enable login/auth. Set to false for single-user deploys with no login screen.",
+          "isOptional": true
+        },
+        "ENABLE_SIGNUP": {
+          "default": "true",
+          "description": "Allow new users to register. Set to false to lock registration after first user.",
+          "isOptional": true
+        },
+        "DEFAULT_MODELS": {
+          "description": "Comma-separated list of models to pre-select on first load (e.g. gpt-4o,llama3).",
+          "isOptional": true
         }
       },
       "volumes": [
