@@ -21,32 +21,32 @@
       "variables": {
         "PORT": {
           "default": "8080",
-          "description": "Port the app listens on. Must be 8080."
+          "description": "Do not change. Open WebUI must listen on 8080."
         },
         "OPENAI_API_KEY": {
-          "description": "Optional: OpenAI API key to connect to OpenAI models.",
+          "description": "Your OpenAI API key (starts with sk-...). Get it from platform.openai.com/api-keys. Leave blank if you are using Ollama only.",
           "isOptional": true
         },
         "OLLAMA_BASE_URL": {
-          "description": "Optional: URL of your Ollama instance.",
+          "description": "Full URL of your Ollama server (e.g. http://your-ollama-host:11434). Leave blank if you are using OpenAI only.",
           "isOptional": true
         },
         "WEBUI_SECRET_KEY": {
-          "description": "Secret key for session signing. Generate a random string.",
+          "description": "Auto-generated. Used to sign user sessions — do not share this value.",
           "randomDefault": true
         },
         "WEBUI_AUTH": {
           "default": "true",
-          "description": "Enable login/auth. Set to false for single-user deploys with no login screen.",
+          "description": "Set to true to require login (recommended). Set to false to skip login entirely — anyone with the URL can access your instance.",
           "isOptional": true
         },
         "ENABLE_SIGNUP": {
           "default": "true",
-          "description": "Allow new users to register. Set to false to lock registration after first user.",
+          "description": "Set to true to let anyone create an account. Set to false after your first login to prevent new registrations.",
           "isOptional": true
         },
         "DEFAULT_MODELS": {
-          "description": "Comma-separated list of models to pre-select on first load (e.g. gpt-4o,llama3).",
+          "description": "Model to load by default when a user opens the chat (e.g. gpt-4o or llama3). Leave blank to let users pick from the list.",
           "isOptional": true
         }
       },
